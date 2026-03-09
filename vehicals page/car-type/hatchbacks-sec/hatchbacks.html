@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="hatchbacks.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axon EV - Rent Hatchbacks</title>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar" id="navbar">
+  <div class="logo">Axon EV</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#car-listings">Cars for Rent</a>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search Hatchbacks...">
+  </div>
+</div>
+
+<!-- HERO IMAGE -->
+<section class="hero-section">
+  <img src="img/main.png" alt="Premium Hatchback">
+</section>
+
+<!-- FILTER SECTION -->
+<section id="filter">
+  <div class="filter-section">
+    <div class="filter-container">
+      <h1>Filter Cars</h1>
+
+      <div class="filter-option">
+        <label for="priceRange">Price Range: ₹<span id="priceValue">000</span> - ₹5000000</label>
+        <input type="range" id="priceRange" min="500" max="5000000">
+      </div>
+
+      <div class="filter-option">
+        <label for="makerFilter">Maker / Brand:</label>
+        <select id="makerFilter">
+          <option value="all">All</option>
+          <option>Tata Motors</option>
+          <option>Mahindra Electric</option>
+          <option>MG Motor</option>
+          <option>Hyundai</option>
+          <option>Kia</option>
+          <option>Axon EV</option>
+          <option>Tesla</option>
+          <option>BYD</option>
+          <option>Nissan</option>
+          <option>Chevrolet</option>
+          <option>Volkswagen</option>
+          <option>Volvo</option>
+          <option>Renault</option>
+          <option>BMW</option>
+          <option>Audi</option>
+          <option>Mercedes-Benz</option>
+          <option>Porsche</option>
+          <option>Jaguar</option>
+          <option>Lexus</option>
+        </select>
+      </div>
+
+      <div class="filter-option">
+        <label for="transmission">Transmission:</label>
+        <select id="transmission">
+          <option value="all">All</option>
+          <option value="automatic">Automatic</option>
+          <option value="manual">Manual</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-image">
+      <img src="img/filterimg.png" alt="Car Image">
+    </div>
+  </div>
+</section>
+
+<!-- HATCHBACK CAR LISTINGS -->
+<section id="car-listings">
+  <h1 style="text-align:center; margin-bottom:40px; color:#4b0082;">Available EV Hatchbacks</h1>
+  <div class="listing-grid">
+
+  <!-- Card 1 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://s7ap1.scene7.com/is/image/tatapassenger/City-0-4?$B-1228-696-S$&fit=crop&fmt=webp" alt="Tata Nexon EV"/>
+        <div class="badge">10% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Tata Nexon EV</div>
+        <div class="car-meta">EV • Automatic • 10,000 km</div>
+        <div class="car-meta">Range: 430 km • 10%-80%: ~60 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹12,000/day</div>
+        <div class="price">₹10,800/day</div>
+        <div class="price-tag great">You Save: ₹1,200</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/01hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_980,h_551,dpr_2.0,q_auto,c_fill,f_auto,fl_lossy/auto-client/fd895677221765ffd78efcc4ed2281a3/61839e3f170dc421af2abccd_new_ev_zs_parked_at_home.jpg" alt="MG ZS EV"/>
+        <div class="badge">12% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">MG ZS EV</div>
+        <div class="car-meta">EV • Automatic • 8,500 km</div>
+        <div class="car-meta">Range: 419 km • 10%-80%: ~50 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹11,500/day</div>
+        <div class="price">₹10,120/day</div>
+        <div class="price-tag great">You Save: ₹1,380</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/02hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/173191/new-kwid-exterior-left-front-three-quarter-4.jpeg?isig=0&q=80" alt="Renault Kwid EV"/>
+        <div class="badge">15% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">Renault Kwid EV</div>
+        <div class="car-meta">EV • Automatic • 7,500 km</div>
+        <div class="car-meta">Range: 340 km • 10%-80%: ~45 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹9,000/day</div>
+        <div class="price">₹7,650/day</div>
+        <div class="price-tag great">You Save: ₹1,350</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/03hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://hyundai.ke/wp-content/uploads/sites/26/2021/08/SEN2409_01-Banners-Site-Hyundai-SEN-Desktop-KonaEV.webp" alt="Hyundai Kona EV"/>
+        <div class="badge">10% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Hyundai Kona EV</div>
+        <div class="car-meta">EV • Automatic • 6,800 km</div>
+        <div class="car-meta">Range: 450 km • 10%-80%: ~55 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹10,500/day</div>
+        <div class="price">₹9,450/day</div>
+        <div class="price-tag great">You Save: ₹1,050</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/04hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://assets.volkswagen.com/is/image/volkswagenag/id3-Expand_Collapse-Charge_Offers-16x9-2500x1406-Image-03?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE5MjAmYWxpZ249LTAuODMsMC4wMCZiZmM9b2ZmJjVjOGQ=" alt="Volkswagen ID.3"/>
+        <div class="badge">12% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Volkswagen ID.3</div>
+        <div class="car-meta">EV • Automatic • 6,500 km</div>
+        <div class="car-meta">Range: 420 km • 10%-80%: ~50 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹11,000/day</div>
+        <div class="price">₹9,680/day</div>
+        <div class="price-tag great">You Save: ₹1,320</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/05hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Honda/Elevate/12099/1758790837363/exterior-image-164.jpg" alt="Honda e"/>
+        <div class="badge">15% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">Honda e</div>
+        <div class="car-meta">EV • Automatic • 5,800 km</div>
+        <div class="car-meta">Range: 220 km • 10%-80%: ~35 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹10,000/day</div>
+        <div class="price">₹8,500/day</div>
+        <div class="price-tag great">You Save: ₹1,500</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/06hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://wieck-nissanao-production.s3.us-west-1.amazonaws.com/releaseInlineImages/6e4d129b0126356ffe178f5393c3bbd41264a2e7" alt="Nissan Leaf"/>
+        <div class="badge">10% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Nissan Leaf</div>
+        <div class="car-meta">EV • Automatic • 7,200 km</div>
+        <div class="car-meta">Range: 364 km • 10%-80%: ~45 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹11,500/day</div>
+        <div class="price">₹10,350/day</div>
+        <div class="price-tag great">You Save: ₹1,150</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/07hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://imgd.aeplcdn.com/310x174/n/cw/ec/110289/ioniq-5-exterior-left-front-three-quarter-2.jpeg?isig=0&q=80&q=80" alt="Hyundai Ioniq 5"/>
+        <div class="badge">12% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Hyundai Ioniq 5</div>
+        <div class="car-meta">EV • Automatic • 6,800 km</div>
+        <div class="car-meta">Range: 480 km • 10%-80%: ~45 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹12,000/day</div>
+        <div class="price">₹10,560/day</div>
+        <div class="price-tag great">You Save: ₹1,440</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/08hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 9 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/2018_BMW_i3_facelift_%281%29.jpg/960px-2018_BMW_i3_facelift_%281%29.jpg" alt="BMW i3"/>
+        <div class="badge">15% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">BMW i3</div>
+        <div class="car-meta">EV • Automatic • 5,600 km</div>
+        <div class="car-meta">Range: 310 km • 10%-80%: ~40 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹12,500/day</div>
+        <div class="price">₹10,625/day</div>
+        <div class="price-tag great">You Save: ₹1,875</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/09hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 10 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://ev-database.org/img/auto/Volkswagen_e-Up-2019/Volkswagen_e-Up-2019-01@2x.jpg" alt="Volkswagen e-Up"/>
+        <div class="badge">10% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Volkswagen e-Up</div>
+        <div class="car-meta">EV • Automatic • 7,000 km</div>
+        <div class="car-meta">Range: 260 km • 10%-80%: ~35 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹10,000/day</div>
+        <div class="price">₹9,000/day</div>
+        <div class="price-tag great">You Save: ₹1,000</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/10hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 11 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Mini/Cooper-SE/8669/Mini-Cooper-SE-Electric/1645696928987/front-left-side-47.jpg?tr=w-664" alt="Mini Cooper SE"/>
+        <div class="badge">12% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Mini Cooper SE</div>
+        <div class="car-meta">EV • Automatic • 5,900 km</div>
+        <div class="car-meta">Range: 234 km • 10%-80%: ~40 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹13,000/day</div>
+        <div class="price">₹11,440/day</div>
+        <div class="price-tag great">You Save: ₹1,560</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/11hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 12 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://media.autoexpress.co.uk/image/private/s--KxOXv_9_--/f_auto,t_content-image-full-desktop@1/v1727455213/autoexpress/2024/09/Peugeot%20E-208%20GT-2.jpg" alt="Peugeot e-208"/>
+        <div class="badge">15% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">Peugeot e-208</div>
+        <div class="car-meta">EV • Automatic • 6,000 km</div>
+        <div class="car-meta">Range: 340 km • 10%-80%: ~45 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹11,500/day</div>
+        <div class="price">₹9,775/day</div>
+        <div class="price-tag great">You Save: ₹1,725</div>
+        <button class="rent-btn" onclick="window.location.href='hatchback/12hach.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- PAGE CONTENT -->
+<section class="page-content">
+  <h2>Our Hatchback Fleet</h2>
+  <p>Explore a variety of electric hatchbacks that combine efficiency, style, and comfort. Reserve your favorite hatchback today!</p>
+  <p>All vehicles come with advanced safety features and seamless driving experience for urban and suburban journeys.</p>
+</section>
+
+<!-- Footer -->
+<section class="ev-footer-section">
+  <img src="img/footer.png" alt="Axon EV">
+  <footer class="ev-footer-overlay">
+    <div class="ev-footer-top">
+      <div class="ev-footer-col">
+        <h3>About Axon EV</h3>
+        <p>Leading the way in electric mobility with sustainable, high-performance vehicles.</p>
+        <div class="ev-footer-bottom">
+          <p>&copy; 2026 Axon EV. All rights reserved.</p>
+          <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+      </div>
+      <div class="ev-footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Models</a></li>
+          <li><a href="#">Dealers</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="ev-footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:support@axon.com">support@axon.com</a></p>
+        <p>Phone: +91 12345 67890</p>
+      </div>
+      <div class="ev-footer-col">
+        <h3>Follow Us</h3>
+        <div class="ev-social-links">
+          <a href="#">Facebook</a> | 
+          <a href="#">Instagram</a> | 
+          <a href="#">Twitter</a> | 
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<script src="hatchbacks.js"></script>
+</body>
+</html>

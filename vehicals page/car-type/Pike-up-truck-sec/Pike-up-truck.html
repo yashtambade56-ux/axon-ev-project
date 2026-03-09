@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Pike-up-truck.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axon EV - Rent Pickup Trucks</title>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar" id="navbar">
+  <div class="logo">Axon EV</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#car-listings">Trucks for Rent</a>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search Pickup Trucks...">
+  </div>
+</div>
+
+<!-- HERO IMAGE -->
+<section class="hero-section">
+  <img src="img/main.png" alt="Premium Pickup Trucks">
+</section>
+
+<!-- FILTER SECTION -->
+<section id="filter">
+  <div class="filter-section">
+    <div class="filter-container">
+      <h1>Filter Trucks</h1>
+
+      <div class="filter-option">
+        <label for="priceRange">Price Range: ₹<span id="priceValue">000</span> - ₹5000000</label>
+        <input type="range" id="priceRange" min="500" max="5000000">
+      </div>
+
+      <div class="filter-option">
+        <label for="makerFilter">Maker / Brand:</label>
+        <select id="makerFilter">
+          <option value="all">All</option>
+          <!-- Indian Brands -->
+          <option>Tata Motors</option>
+          <option>Mahindra Electric</option>
+          <option>MG Motor</option>
+          <option>Hyundai</option>
+          <option>Kia</option>
+          <!-- Global Brands -->
+          <option>Axon EV</option>
+          <option>Tesla</option>
+          <option>BYD</option>
+          <option>Nissan</option>
+          <option>Chevrolet</option>
+          <option>Volkswagen</option>
+          <option>Volvo</option>
+          <option>Renault</option>
+          <!-- Luxury -->
+          <option>BMW</option>
+          <option>Audi</option>
+          <option>Mercedes-Benz</option>
+          <option>Porsche</option>
+          <option>Jaguar</option>
+          <option>Lexus</option>
+        </select>
+      </div>
+
+      <div class="filter-option">
+        <label for="transmission">Transmission:</label>
+        <select id="transmission">
+          <option value="all">All</option>
+          <option value="automatic">Automatic</option>
+          <option value="manual">Manual</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-image">
+      <img src="img/filterimg.png" alt="Truck Image">
+    </div>
+  </div>
+</section>
+
+<!-- PICKUP TRUCK LISTINGS -->
+<section id="car-listings">
+  <h1 style="text-align:center; margin-bottom:40px; color:#4b0082;">Available EV Pickup Trucks</h1>
+  <div class="listing-grid">
+
+  <!-- Card 1 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Cybertruck-Hero-Desktop-NA-SA-APAC.png" alt="Tesla Cybertruck"/>
+        <div class="badge">83% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Tesla Cybertruck</div>
+        <div class="car-meta">EV • Automatic • 2,000 km</div>
+        <div class="car-meta">Range: 800 km • 10%-80%: ~45 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹75,000/day</div>
+        <div class="price">₹12,500/day</div>
+        <div class="price-tag great">You Save: ₹62,500</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/01truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://www.team-bhp.com/forum/attachments/electric-cars/2331632d1686940351t-rivian-r1t-review-worlds-fastest-pick-up-truck-electric-intro.jpeg" alt="Rivian R1T"/>
+        <div class="badge">82% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Rivian R1T</div>
+        <div class="car-meta">EV • Automatic • 3,000 km</div>
+        <div class="car-meta">Range: 560 km • 10%-80%: ~40 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹72,000/day</div>
+        <div class="price">₹12,800/day</div>
+        <div class="price-tag great">You Save: ₹59,200</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/02truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://www.assets.ford.com/adobe/assets/urn:aaid:aem:22986718-11ac-4e3b-ad52-be0251ab02b4/as/Lightning_Mosaic4.webp?max-quality=75&crop-names=1_1x1&width=1920" alt="Ford F-150 Lightning"/>
+        <div class="badge">84% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">Ford F-150 Lightning</div>
+        <div class="car-meta">EV • Automatic • 1,500 km</div>
+        <div class="car-meta">Range: 480 km • 10%-80%: ~42 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹70,000/day</div>
+        <div class="price">₹11,200/day</div>
+        <div class="price-tag great">You Save: ₹58,800</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/03truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/2026-gmc-hummer-ev-pickup-exterior-pr-111-6830be067f42b.jpg?crop=0.817xw:0.691xh;0.122xw,0.211xh&resize=1200:*" alt="GMC Hummer EV"/>
+        <div class="badge">83% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">GMC Hummer EV</div>
+        <div class="car-meta">EV • Automatic • 2,200 km</div>
+        <div class="car-meta">Range: 530 km • 10%-80%: ~41 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹75,000/day</div>
+        <div class="price">₹12,750/day</div>
+        <div class="price-tag great">You Save: ₹62,250</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/04truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://www.inchcape-plus.com.sg/media/wgtfharm/gallery-section_exterior-1_1555x669px.jpg?width=1600&height=600&v=1db2fc64f15f230" alt="BYD T9"/>
+        <div class="badge">82% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">BYD T9</div>
+        <div class="car-meta">EV • Automatic • 1,800 km</div>
+        <div class="car-meta">Range: 520 km • 10%-80%: ~43 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹70,000/day</div>
+        <div class="price">₹12,600/day</div>
+        <div class="price-tag great">You Save: ₹57,400</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/05truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://www.nissanusa.com/content/dam/Nissan/us/vehicles/trucks/DarkArmor/frontier-dark-armor-d.jpg" alt="Nissan e-Frontier"/>
+        <div class="badge">84% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Nissan e-Frontier</div>
+        <div class="car-meta">EV • Automatic • 2,500 km</div>
+        <div class="car-meta">Range: 500 km • 10%-80%: ~44 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹72,000/day</div>
+        <div class="price">₹11,500/day</div>
+        <div class="price-tag great">You Save: ₹60,500</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/06truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://automacha.com/wp-content/uploads/2020/04/Volvo-pickup-truck.jpg" alt="Volvo XC Pickup"/>
+        <div class="badge">83% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">Volvo XC Pickup</div>
+        <div class="car-meta">EV • Automatic • 2,100 km</div>
+        <div class="car-meta">Range: 470 km • 10%-80%: ~42 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹70,000/day</div>
+        <div class="price">₹11,900/day</div>
+        <div class="price-tag great">You Save: ₹58,100</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/07truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://stimg2.cardekho.com/images/carNewsEditorImages/816x544/20210417_120803/27035/hyundai0.jpg" alt="Hyundai Santa Cruz"/>
+        <div class="badge">82% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Hyundai Santa Cruz</div>
+        <div class="car-meta">EV • Automatic • 1,900 km</div>
+        <div class="car-meta">Range: 430 km • 10%-80%: ~41 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹68,000/day</div>
+        <div class="price">₹12,240/day</div>
+        <div class="price-tag great">You Save: ₹55,760</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/08truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 9 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://s7ap1.scene7.com/is/image/tatamotors/sierra-kv-614x400?$TT-614-420-S$&fit=fit&fmt=avif-alpha" alt="Tata Sierra EV Pickup"/>
+        <div class="badge">83% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Tata Sierra EV Pickup</div>
+        <div class="car-meta">EV • Automatic • 2,300 km</div>
+        <div class="car-meta">Range: 440 km • 10%-80%: ~43 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹75,000/day</div>
+        <div class="price">₹12,750/day</div>
+        <div class="price-tag great">You Save: ₹62,250</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/09truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 10 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://auto.mahindra.com/on/demandware.static/-/Sites-amc-Library/default/dw0f56d7c7/Pik-up/banner/Desktop-banner-1920X829-01-new-pik-up.jpg" alt="Mahindra e-Pickup"/>
+        <div class="badge">83% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">Mahindra e-Pickup</div>
+        <div class="car-meta">EV • Automatic • 2,000 km</div>
+        <div class="car-meta">Range: 420 km • 10%-80%: ~44 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹74,000/day</div>
+        <div class="price">₹12,200/day</div>
+        <div class="price-tag great">You Save: ₹61,800</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/10truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 11 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://worldwide.kia.com/int/image/page/tasman/renew/lineup-area-single-cab-chassis-lg.jpg" alt="Kia EV Pickup"/>
+        <div class="badge">82% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Kia EV Pickup</div>
+        <div class="car-meta">EV • Automatic • 2,100 km</div>
+        <div class="car-meta">Range: 450 km • 10%-80%: ~42 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹70,000/day</div>
+        <div class="price">₹12,600/day</div>
+        <div class="price-tag great">You Save: ₹57,400</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/11truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 12 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://imgd.aeplcdn.com/642x361/n/cw/ec/210581/exterior-right-front-three-quarter-2.jpeg?isig=0&q=80" alt="MG e-Truck"/>
+        <div class="badge">83% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">MG e-Truck</div>
+        <div class="car-meta">EV • Automatic • 2,400 km</div>
+        <div class="car-meta">Range: 460 km • 10%-80%: ~43 min</div>
+        <div style="text-decoration:line-through;color:#888;">₹75,000/day</div>
+        <div class="price">₹12,750/day</div>
+        <div class="price-tag great">You Save: ₹62,250</div>
+        <button class="rent-btn" onclick="window.location.href='pickup/12truck.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- PAGE CONTENT -->
+<section class="page-content">
+  <h2>Our Pickup Truck Fleet</h2>
+  <p>Discover a wide range of premium EV pickup trucks built for performance, utility, and adventure. Reserve your favorite truck today and enjoy a seamless rental experience.</p>
+  <p>All vehicles come with top-notch safety, features, and electric efficiency to make your journey smooth and powerful.</p>
+</section>
+
+<!-- Footer -->
+<section class="ev-footer-section">
+  <img src="img/footer.png" alt="Axon EV">
+  <footer class="ev-footer-overlay">
+    <div class="ev-footer-top">
+      <div class="ev-footer-col">
+        <h3>About Axon EV</h3>
+        <p>Leading the way in electric mobility with sustainable, high-performance vehicles.</p>
+        <div class="ev-footer-bottom">
+          <p>&copy; 2026 Axon EV. All rights reserved.</p>
+          <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+      </div>
+      <div class="ev-footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Models</a></li>
+          <li><a href="#">Dealers</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="ev-footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:support@axon.com">support@axon.com</a></p>
+        <p>Phone: +91 12345 67890</p>
+      </div>
+      <div class="ev-footer-col">
+        <h3>Follow Us</h3>
+        <div class="ev-social-links">
+          <a href="#">Facebook</a> | 
+          <a href="#">Instagram</a> | 
+          <a href="#">Twitter</a> | 
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<script src="Pike-up-truck.js"></script>
+</body>
+</html>
