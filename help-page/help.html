@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axon Support | Professional EV Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --axon-blue: #2563eb;
+            --axon-dark: #0f172a;
+            --axon-gray: #64748b;
+            --axon-light: #f8fafc;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: var(--white); color: var(--axon-dark); line-height: 1.6; }
+
+        /* ===== SYSTEM STATUS BAR ===== */
+        .status-bar {
+            background: #f1f5f9; padding: 8px 0; text-align: center; font-size: 0.8rem;
+            border-bottom: 1px solid #e2e8f0; font-weight: 600;
+        }
+        .dot { height: 8px; width: 8px; background: var(--success); border-radius: 50%; display: inline-block; margin-right: 5px; }
+
+        /* ===== NAVBAR & SIDEBAR (Your Styling) ===== */
+        .header {
+            position: fixed; top: 33px; width: 100%; background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1300px; margin: auto; padding: 15px 25px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-weight: 800; font-size: 1.4rem; text-decoration: none; color: var(--axon-dark); }
+        .logo span { color: var(--axon-blue); }
+
+        .menu-btn { font-size: 24px; cursor: pointer; transition: 0.3s; }
+        #menu-toggle { display: none; }
+
+        .sidebar {
+            position: fixed; top: 0; right: -320px; width: 300px; height: 100%;
+            background: #ffffff; box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            padding: 50px 30px; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1100;
+        }
+        .sidebar ul { list-style: none; margin-top: 40px; }
+        .sidebar li { margin-bottom: 25px; }
+        .sidebar a { text-decoration: none; color: var(--axon-dark); font-weight: 600; font-size: 1.1rem; }
+        .sidebar a:hover, .sidebar a.active { color: var(--axon-blue); }
+
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.4); opacity: 0; visibility: hidden;
+            transition: 0.3s; z-index: 1050; backdrop-filter: blur(4px);
+        }
+        #menu-toggle:checked ~ .sidebar { right: 0; }
+        #menu-toggle:checked ~ .overlay { opacity: 1; visibility: visible; }
+
+        /* ===== HERO SEARCH ===== */
+        .hero { padding: 180px 20px 80px; text-align: center; background: radial-gradient(circle at top right, #eff6ff, #ffffff); }
+        .hero h1 { font-size: 3.5rem; letter-spacing: -2px; margin-bottom: 20px; font-weight: 800; }
+        .search-box {
+            max-width: 700px; margin: 30px auto; position: relative;
+        }
+        .search-box input {
+            width: 100%; padding: 22px 35px; border-radius: 100px; border: 1px solid #e2e8f0;
+            font-size: 1.1rem; box-shadow: 0 15px 35px rgba(0,0,0,0.05); outline: none; transition: 0.3s;
+        }
+        .search-box input:focus { border-color: var(--axon-blue); box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15); }
+
+        /* ===== BENTO CATEGORIES ===== */
+        .section-padding { padding: 100px 25px; max-width: 1300px; margin: auto; }
+        .grid-bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .bento-card {
+            background: #fff; padding: 40px; border-radius: 28px; border: 1px solid #f1f5f9;
+            transition: 0.3s ease; text-decoration: none; color: inherit;
+        }
+        .bento-card:hover { transform: translateY(-8px); border-color: var(--axon-blue); box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
+        .bento-card h3 { margin-bottom: 12px; font-size: 1.4rem; }
+        .bento-card p { color: var(--axon-gray); font-size: 0.95rem; }
+
+        /* ===== VIDEO TUTORIALS ===== */
+        .video-section { background: var(--axon-light); border-radius: 40px; margin: 0 25px; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .video-thumb { 
+            width: 100%; aspect-ratio: 16/9; background: #e2e8f0; border-radius: 20px;
+            display: flex; align-items: center; justify-content: center; position: relative;
+            cursor: pointer; overflow: hidden;
+        }
+        .video-thumb:hover { opacity: 0.9; }
+        .play-btn { background: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+
+        /* ===== LIVE CONTACT HUB ===== */
+        .contact-bar {
+            background: var(--axon-dark); color: white; padding: 60px;
+            border-radius: 30px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .contact-btn {
+            background: var(--axon-blue); color: white; padding: 16px 35px; border-radius: 12px;
+            text-decoration: none; font-weight: 700; transition: 0.3s;
+        }
+
+        /* ===== MEGA FOOTER (LIGHT) ===== */
+        .footer { background: #fff; border-top: 1px solid #e2e8f0; padding: 100px 25px 50px; }
+        .footer-grid {
+            max-width: 1300px; margin: auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr; gap: 40px;
+        }
+        .footer-col h5 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 12px; }
+        .footer-col a { text-decoration: none; color: var(--axon-gray); font-size: 0.95rem; transition: 0.2s; }
+        .footer-col a:hover { color: var(--axon-blue); }
+
+        @media (max-width: 992px) {
+            .grid-bento, .footer-grid { grid-template-columns: 1fr 1fr; }
+            .contact-bar { flex-direction: column; text-align: center; gap: 30px; }
+        }
+
+                   /* --- Video Section Styling --- */
+        .section-container { max-width: 1300px; margin: auto; padding: 80px 25px; }
+        .video-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px; margin-top: 40px;
+        }
+        .video-wrapper {
+            background: #fff; border-radius: 24px; overflow: hidden;
+            border: 1px solid #e2e8f0; transition: 0.3s;
+        }
+        .video-wrapper:hover { transform: translateY(-5px); border-color: var(--axon-blue); }
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+        .video-info { padding: 25px; }
+        .video-info h4 { margin-bottom: 10px; font-weight: 700; }
+        .video-info p { color: var(--axon-gray); font-size: 0.9rem; }
+
+        /* ================= NAVBAR ================= */
+.header {
+    background: #d4d4d4;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-box {
+    background: #2563eb;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    color: #2563eb;
+}
+
+.menu-btn {
+    font-size: 26px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* ================= SIDEBAR & OVERLAY ================= */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.08);
+    padding: 40px 25px;
+    transition: right 0.4s ease;
+    z-index: 1100;
+}
+
+.sidebar h3 {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 22px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #2563eb;
+    padding-left: 5px;
+}
+
+.sidebar ul li a.active {
+    color: #2563eb;
+    font-weight: 700;
+    border-left: 3px solid #2563eb;
+    padding-left: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 1050;
+}
+
+#menu-toggle:checked~.sidebar {
+    right: 0;
+}
+
+#menu-toggle:checked~.overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+    <div class="status-bar">
+        <span class="dot"></span> All Systems Operational: Axon Cloud, Charging, and OTA services are online.
+    </div>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">AXON<span>EV</span></a>
+            <label for="menu-toggle" class="menu-btn">☰</label>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <label for="menu-toggle" style="cursor:pointer; font-weight:800;">✕ CLOSE</label>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="vehicles.html">Vehicles Showroom</a></li>
+      <li><a href="../compare-page/compare.html">Compare Models</a></li>
+      <li><a href="../sub-page/sub.html">Subscription</a></li>
+      <li><a href="../Home Charger/home.html">Add Home Charger</a></li>
+      <li><a href="../calculet-page/cal.html">Calculate Total Cost</a></li>
+      <li><a href="../help-page/help.html" class="active">Help Center</a></li>
+    </ul>
+    </div>
+    <label for="menu-toggle" class="overlay"></label>
+
+    <section class="hero">
+        <h1>How can we <span style="color:var(--axon-blue)">guide</span> you?</h1>
+        <div class="search-box">
+            <input type="text" placeholder="Search manuals, charging tips, or software logs...">
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="grid-bento">
+            <a href="#" class="bento-card">
+                <span style="font-size:2rem;">⚡</span>
+                <h3>Charging</h3>
+                <p>Home wallbox setup, fast-charging safety, and station maps.</p>
+            </a>
+            <a href="#" class="bento-card">
+                <span style="font-size:2rem;">🔋</span>
+                <h3>Battery Health</h3>
+                <p>Maximize range and longevity with intelligent thermal management.</p>
+            </a>
+            <a href="#" class="bento-card">
+                <span style="font-size:2rem;">📱</span>
+                <h3>Axon OS</h3>
+                <p>Update your vehicle's AI, interface, and mobile connectivity.</p>
+            </a>
+        </div>
+    </section>
+        
+
+    <section class="section-container" style="text-align: center;">
+        <h1 style="font-size: 3rem; font-weight: 800;">Visual <span style="color:var(--axon-blue)">Masterclass</span></h1>
+        <p style="color:var(--axon-gray); margin-top: 10px;">Everything you need to know about owning an Axon EV.</p>
+
+        <div class="video-grid">
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/xNZR4wB-T80" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Electric Cars for Beginners</h4>
+                    <p>A complete walkthrough of EV ownership, charging, and maintenance.</p>
+                </div>
+            </div>
+
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Ph05hlu0S3E" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>The Guide to EV Charging</h4>
+                    <p>Master the difference between Level 1, 2, and Supercharging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="contact-bar">
+            <div>
+                <h2 style="font-size: 2.5rem;">Still need help?</h2>
+                <p style="opacity:0.8;">Our technical experts are standing by 24/7.</p>
+            </div>
+            <a href="#" class="contact-btn">Open Live Support Chat</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">AXON<span>EV</span></a>
+                <p style="margin-top:20px; font-size: 0.9rem;">Building the intelligent infrastructure for a zero-emission future.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Vehicles</h5>
+                <ul>
+                    <li><a href="#">Model Alpha</a></li>
+                    <li><a href="#">Model Stealth</a></li>
+                    <li><a href="#">Fleet Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Energy</h5>
+                <ul>
+                    <li><a href="#">SolarSync</a></li>
+                    <li><a href="#">Wallbox Pro</a></li>
+                    <li><a href="#">Grid Sharing</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Service Booking</a></li>
+                    <li><a href="#">OTA Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Connect</h5>
+                <p style="font-size:0.8rem; margin-bottom:15px;">Join 50,000+ Axon owners.</p>
+                <div style="display:flex; gap:10px;">
+                    <input type="text" placeholder="Email" style="padding:10px; border-radius:8px; border:1px solid #e2e8f0; flex:1;">
+                    <button style="background:var(--axon-blue); color:white; border:none; padding:10px; border-radius:8px;">➜</button>
+                </div>
+            </div>
+        </div>
+        <div style="max-width:1300px; margin:80px auto 0; padding-top:30px; border-top:1px solid #f1f5f9; text-align:center; font-size:0.8rem; color:var(--axon-gray);">
+            &copy; 2026 Axon Motors Inc. | Designed for Educational Learning | Images via Gemini AI
+        </div>
+    </footer>
+
+</body>
+</html>
+
+ 

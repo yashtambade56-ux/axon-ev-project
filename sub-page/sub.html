@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXON EV | Subscription</title>
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- CHECKBOX  -->
+    <input type="checkbox" id="menu-toggle">
+
+    <header class="axon-nav">
+        <div class="footer-container">
+            <div class="footer-brand-col">
+                <div class="logo">AXON<span>EV</span></div>
+                <p>Driving the future of sustainable mobility.</p>
+            </div>
+            <!-- Menu Button -->
+            <label for="menu-toggle" class="menu-btn">☰</label>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <label for="menu-toggle" class="close-btn">✕</label>
+        <h3>Menu</h3>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../vehicals page/vehicles.html">Vehicles Showroom</a></li>
+      <li><a href="../compare-page/compare.html">Compare Models</a></li>
+      <li><a href="../sub-page/sub.html" class="active">Subscription</a></li>
+      <li><a href="../Home Charger/home.html">Add Home Charger</a></li>
+      <li><a href="../calculet-page/cal.html">Calculate Total Cost</a></li>
+      <li><a href="../help-page/help.html">Help Center</a></li>
+    </ul>
+    </div>
+    <!-- Overlay -->
+    <label for="menu-toggle" class="overlay"></label>
+
+    <main class="subscription-wrapper">
+
+        <div id="step1" class="step-content">
+            <div class="icon-circle-step1"><i class="fas fa-check"></i></div>
+            <p class="step-indicator">STEP 1 OF 3</p>
+            <h1 class="main-title">Choose your plan.</h1>
+            <ul class="benefit-list">
+                <ul><i class="fas fa-check"></i> No long-term commitments. Cancel anytime.</ul>
+                <ul><i class="fas fa-check"></i> Flexible EV subscription at one simple price.</ul>
+                <ul><i class="fas fa-check"></i> No hidden charges. Guaranteed.</ul>
+                <ul><i class="fas fa-check"></i> 18% GST included.</ul>
+            </ul>
+            <button class="btn btn-primary btn-wide" onclick="showStep2()">Next</button>
+        </div>
+
+        <div id="step2" class="step-content" style="display:none;">
+            <p class="step-indicator">STEP 2 OF 3</p>
+            <h1 class="main-title">Choose Your AXON EV Plan</h1>
+            <p class="subtitle">Flexible EV subscriptions designed for your lifestyle</p>
+
+            <div class="plan-grid">
+                <label class="plan-card">
+                    <input type="radio" name="axon_plan" id="plan-basic">
+                    <div class="selection-indicator"></div>
+                    <div class="card-body">
+                        <span class="plan-tagline">Perfect for City Riders</span>
+                        <h2 class="plan-name">BASIC</h2>
+                        <div class="price">₹0<span>/mo</span></div>
+                        <ul class="feature-list">
+                            <li>Email & chat support</li>
+                            <li>Standard Charging</li>
+                            <li>Basic Insurance</li>
+                        </ul>
+                    </div>
+                </label>
+
+                <label class="plan-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <input type="radio" name="axon_plan" id="plan-standard" checked>
+                    <div class="selection-indicator"></div>
+                    <div class="card-body">
+                        <span class="plan-tagline">Balanced Performance</span>
+                        <h2 class="plan-name">STANDARD</h2>
+                        <div class="price">₹9,999<span>/mo</span></div>
+                        <ul class="feature-list">
+                            <li>25% off</li>
+                            <li>Priority customer support</li>
+                            <li>Fast Charging Support</li>
+                            <li>24/7 Roadside Support</li>
+                        </ul>
+                    </div>
+                </label>
+
+                <label class="plan-card">
+                    <input type="radio" name="axon_plan" id="plan-premium">
+                    <div class="selection-indicator"></div>
+                    <div class="card-body">
+                        <span class="plan-tagline">Ultimate Experience</span>
+                        <h2 class="plan-name">PREMIUM</h2>
+                        <div class="price">₹14,999<span>/mo</span></div>
+                        <ul class="feature-list">
+                            <li>50% off</li>
+                            <li>Full maintenance & servicing</li>
+                            <li>AI Driving Assist</li>
+                            <li>Full Insurance Coverage</li>
+                        </ul>
+                    </div>
+                </label>
+
+                <label class="plan-card custom-card">
+                    <input type="radio" name="axon_plan" id="plan-custom">
+                    <div class="selection-indicator"></div>
+                    <div class="card-body">
+                        <span class="plan-tagline">Build Your Own</span>
+                        <h2 class="plan-name">CUSTOM</h2>
+                        <div class="price" id="totalPriceDisplay">₹0<span>/mo</span></div>
+                        <div class="custom-builder">
+                            <label class="addon"><input type="checkbox" value="2000" class="addon-check"> <span>
+                                    Priority delivery</span> <small>+₹2k</small></label>
+                            <label class="addon"><input type="checkbox" value="1500" class="addon-check"> <span>Fast
+                                    Charger</span> <small>+₹1.5k</small></label>
+                            <label class="addon"><input type="checkbox" value="3000" class="addon-check"> <span>AI Auto
+                                    Drive</span> <small>+₹3k</small></label>
+
+                            <label class="addon"><input type="checkbox" value="1200" class="addon-check"> <span>Premium
+                                    Sound System</span> <small>+₹1.2k</small></label>
+                            <label class="addon"><input type="checkbox" value="2500" class="addon-check"> <span>Full
+                                    Zero-Dep Insurance</span> <small>+₹2.5k</small></label>
+                            <label class="addon"><input type="checkbox" value="800" class="addon-check"> <span>Roadside
+                                    Plus (Global)</span> <small>+₹800</small></label>
+                            <label class="addon"><input type="checkbox" value="1800" class="addon-check">
+                                <span>All-Access Network Charging</span> <small>+₹1.8k</small></label>
+                        </div>
+                    </div>
+                </label>
+
+            </div>
+
+            <div class="comparison-container">
+    <h2 class="comparison-title">Find the right plan for you</h2>
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th class="feature-head">Monthly Features</th>
+                <th>Basic</th>
+                <th class="is-popular">Standard</th>
+                <th>Premium</th>
+                <th>Custom</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>off on car rent</td>
+                <td>0% off</td>
+                <td>25% off</td>
+                <td>50% off</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Fast Charging Support</td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td>Optional</td>
+            </tr>
+            <tr>
+                <td>24/7 Roadside Assistance</td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td>Optional</td>
+            </tr>
+            <tr>
+                <td>AI Driving Assist</td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td>Optional</td>
+            </tr>
+            <tr>
+                <td>Insurance Type</td>
+                <td>Standard</td>
+                <td>Standard</td>
+                <td>Zero-Dep</td>
+                <td>Flexible</td>
+            </tr>
+            <tr>
+                <td>Smart App Connectivity</td>
+                <td>Basic</td>
+                <td>Advanced</td>
+                <td>Pro</td>
+                <td>Advanced</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+            <div class="action-footer">
+                <button class="btn btn-secondary" onclick="showStep1()">BACK</button>
+                <button class="btn btn-primary" onclick="showStep3()">CONTINUE</button>
+            </div>
+        </div>
+
+        <div id="step3" class="step-content" style="display:none;">
+            <p class="step-indicator">STEP 3 OF 3</p>
+            <h1 class="main-title">Set up your payment</h1>
+
+            <div class="checkout-container">
+                <div class="payment-form">
+                    <div class="payment-methods">
+                        <div class="method active" id="method-card" onclick="switchPayment('card')">
+                            <i class="fas fa-credit-card"></i> Card
+                        </div>
+                        <div class="method" id="method-upi" onclick="switchPayment('upi')">
+                            <i class="fab fa-google-pay"></i> UPI
+                        </div>
+                    </div>
+
+                    <form id="axon-payment-form" onsubmit="return false;">
+                        <div id="card-fields">
+                            <div class="input-group">
+                                <label>Cardholder Name</label>
+                                <input type="text" placeholder="Yash Tambade">
+                            </div>
+                            <div class="input-group">
+                                <label>Card Number</label>
+                                <input type="text" placeholder="0000 0000 0000 0000">
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group"><label>Expiry</label><input type="text" placeholder="MM/YY">
+                                </div>
+                                <div class="input-group"><label>CVV</label><input type="password" placeholder="***">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="upi-fields" style="display: none;">
+                            <div class="input-group">
+                                <label>Enter UPI ID</label>
+                                <input type="text" id="upi-id" placeholder="username@upi">
+                                <p class="secure-text" style="text-align: left; color: #666;">Pay via GPay, PhonePe, or
+                                    Paytm.</p>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-full" onclick="completePayment()">START MEMBERSHIP</button>
+                    </form>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-details">
+                        <div class="summary-line"><span id="selected-plan-name">Plan</span><span
+                                id="selected-plan-price">₹0</span></div>
+                        <div class="summary-line subtext"><span>GST (18%)</span><span id="summary-gst">₹0</span></div>
+                        <hr>
+                        <div class="summary-line total"><span>Total Today</span><span id="summary-total">₹0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-footer">
+                <button class="btn btn-secondary" onclick="showStep2()">BACK</button>
+            </div>
+        </div>
+    </main>
+
+  <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h2 style="color:var(--axon-blue); margin-bottom: 20px;">AXON</h2>
+                <p>This is a simulated learning platform created for educational purposes. All images generated via Gemini AI to showcase future mobility concepts.</p>
+            </div>
+            <div>
+                <h4>Learning</h4>
+                <ul>
+                    <li><a href="#">EV Basics</a></li>
+                    <li><a href="#">Charging Guide</a></li>
+                    <li><a href="#">Battery Tech</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Project</a></li>
+                    <li><a href="#">Roadmap</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 15px;">Get the latest in EV tech.</p>
+                <input type="email" placeholder="Email Address" style="padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; width: 100%;">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Axon EV Project | For Learning Purposes</p>
+        </div>
+    </footer>
+
+    <script src="sub.js"></script>
+</body>
+
+</html>

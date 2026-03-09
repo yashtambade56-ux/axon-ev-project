@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axon EV Home Charger</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Segoe UI, sans-serif;
+        }
+
+        body {
+            background: #e8e8e8;
+        }
+
+        /* HEADER */
+        header {
+            background: #e2e2e2;
+            color: rgb(27, 27, 27);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            color: #1d1d1d;
+        }
+
+        nav a {
+            color: rgb(47, 47, 47);
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        /* HERO */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text button {
+            padding: 12px 25px;
+            background: #00BFFF;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* BUY SECTION */
+        .buy-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 8%;
+            background: white;
+        }
+
+        .buy-section h2 {
+            font-size: 28px;
+        }
+
+        .buy-section a {
+            background: #E50914;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+        }
+
+        .buy-section a:hover {
+            background: #ff000d;
+            scale: 1.01;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+            padding: 12px 20px;
+        }
+
+        /* PRODUCT GRID */
+        .products {
+            padding: 80px 8%;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .card button {
+            background: #00BFFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* SPLIT SECTION */
+        .split {
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            gap: 50px;
+        }
+
+        .split img {
+            width: 50%;
+            border-radius: 12px;
+        }
+
+        .split-text {
+            width: 50%;
+        }
+
+        .split-text h2 {
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #f3f3f3;
+            color: rgb(0, 0, 0);
+            padding: 40px 8%;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:1000px) {
+
+            .hero,
+            .buy-section,
+            .split {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero img,
+            .hero-text,
+            .split img,
+            .split-text {
+                width: 100%;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* --- SIDEBAR MENU --- */
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-btn {
+            font-size: 26px;
+            cursor: pointer;
+            color: #1d1d1d;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100%;
+            background: #ffffff;
+            box-shadow: -8px 0 20px rgba(0, 0, 0, 0.08);
+            padding: 40px 25px;
+            transition: right 0.4s ease;
+            z-index: 1100;
+            text-align: left;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 25px;
+            font-size: 20px;
+            color: #111827;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 22px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 600;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .sidebar ul li a:hover {
+            color: #00BFFF;
+        }
+
+        .sidebar ul li a.active {
+            color: #00BFFF;
+            border-left: 3px solid #00BFFF;
+            padding-left: 10px;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            z-index: 1050;
+        }
+
+        #menu-toggle:checked~.sidebar {
+            right: 0;
+        }
+
+        #menu-toggle:checked~.overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #374151;
+        }
+
+        
+        /* ================= NAVBAR ================= */
+.header {
+    background: #d4d4d4;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-box {
+    background: #2563eb;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    color: #2563eb;
+}
+
+.menu-btn {
+    font-size: 26px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* ================= SIDEBAR & OVERLAY ================= */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.08);
+    padding: 40px 25px;
+    transition: right 0.4s ease;
+    z-index: 1100;
+}
+
+.sidebar h3 {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 22px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #2563eb;
+    padding-left: 5px;
+}
+
+.sidebar ul li a.active {
+    color: #2563eb;
+    font-weight: 700;
+    border-left: 3px solid #2563eb;
+    padding-left: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 1050;
+}
+
+#menu-toggle:checked~.sidebar {
+    right: 0;
+}
+
+#menu-toggle:checked~.overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* diff foter */
+
+        .footer { background: var(--footer-bg); padding: 80px 20px 40px; color: var(--axon-gray); border-top: 1px solid #e2e8f0; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; }
+        .footer h4 { color: var(--axon-dark); margin-bottom: 20px; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 12px; }
+        .footer a { color: var(--axon-gray); text-decoration: none; transition: 0.2s; }
+        .footer a:hover { color: var(--axon-blue); }
+        .footer-bottom { max-width: 1200px; margin: 60px auto 0; padding-top: 30px; border-top: 1px solid #cbd5e1; display: flex; justify-content: space-between; font-size: 0.85rem; }
+    </style>
+</head>
+
+<body>
+
+    <!-- CHECKBOX (MUST BE FIRST) -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- HEADER -->
+    <header>
+        <h2>AXON EV</h2>
+        <label for="menu-toggle" class="menu-btn">☰</label>
+    </header>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <label for="menu-toggle" class="close-btn">✕</label>
+        <h3>Menu</h3>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../vehicals page/vehicles.html">Vehicles Showroom</a></li>
+      <li><a href="../compare-page/compare.html">Compare Models</a></li>
+      <li><a href="../sub-page/sub.html">Subscription</a></li>
+      <li><a href="../Home Charger/home.html" class="active">Add Home Charger</a></li>
+      <li><a href="../calculet-page/cal.html">Calculate Total Cost</a></li>
+      <li><a href="../help-page/help.html">Help Center</a></li>
+    </ul>
+    </div>
+    <!-- Overlay -->
+    <label for="menu-toggle" class="overlay"></label>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="main.png" alt="EV Charger">
+        </div>
+    </section>
+
+    <!-- BUY SECTION -->
+    <section class="buy-section">
+        <h2>Buy Your Home Charger...</h2>
+        <a href="https://www.google.com/maps/search/ev+charging+stations" target="_blank">
+            View nearby charging stations
+        </a>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="products">
+        <div class="product-grid">
+
+            <!-- 8 Cards -->
+            <div class="card" onclick="window.open('https://www.amazon.in/dp/B0DR881V4K/', '_blank')">
+                <img src="https://m.media-amazon.com/images/I/518rWUL9dIL._AC_SL1000_.jpg" alt="Axon Basic">
+                <h3>Axon Basic 7kW</h3>
+                <p class="price">₹9,999 </p>
+                <p>Perfect for daily home charging with safety certification.</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="card" onclick="window.open('https://www.amazon.in/dp/B0F3CYYZLG/', '_blank')">
+                <img src="https://m.media-amazon.com/images/I/51BcKLGkaxL._SX679_.jpg" alt="Axon Fast">
+                <h3>Axon Fast 11kW</h3>
+                <p class="price">₹13,499 </p>
+                <p>Fast home charging for modern EV users.</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="card" onclick="window.open('https://www.amazon.in/dp/B0DF7PT75R/', '_blank')">
+                <img src="https://m.media-amazon.com/images/I/61uITy0emmL._SX679_.jpg" alt="Axon Pro">
+                <h3>Axon Pro 22kW</h3>
+                <p class="price">₹16,499 </p>
+                <p>Ultra fast premium charging solution.</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="card" onclick="window.open('https://www.amazon.in/dp/B0FL7PTRHD/', '_blank')">
+                <img src="https://m.media-amazon.com/images/I/61j0Gv4VFhL._SX679_.jpg" alt="Smart Wall Box">
+                <h3>Smart Wall Box</h3>
+                <p class="price">₹19,999</p>
+                <p>Smart control via mobile app integration.</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="card" onclick="window.open('https://www.amazon.in/dp/B0DF17C887/', '_blank')">
+                <img src="https://m.media-amazon.com/images/I/716N+qz7q-L._SX679_.jpg" alt="Compact Charger">
+                <h3>Compact Charger</h3>
+                <p class="price">₹22,999 </p>
+                <p>Space saving minimal design.</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="card" onclick="window.open('https://www.amazon.in/dp/B0CX98VRSG/', '_blank')">
+                <img src="https://m.media-amazon.com/images/I/51GOeh8RWwL._SX679_.jpg" alt="Outdoor Pro">
+                <h3>Outdoor Pro</h3>
+                <p class="price">₹23,683 </p>
+                <p>Weather resistant outdoor charger.</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="card" onclick="window.open('https://www.amazon.in/dp/B0DQ1ZZW89/', '_blank')">
+                <img src="https://m.media-amazon.com/images/I/31eLbD-3YeL._SY300_SX300_QL70_FMwebp_.jpg"
+                    alt="Premium Install">
+                <h3>Premium Home Charger</h3>
+                <p class="price">₹28,999 </p>
+                <p>Includes full professional installation.</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="card" onclick="window.open('https://www.amazon.in/dp/B0F799XRP1/', '_blank')">
+                <img src="https://m.media-amazon.com/images/I/61XSBdEA8pL._SX679_.jpg" alt="Home Power Max">
+                <h3>Home Power Max</h3>
+                <p class="price">₹38,948 </p>
+                <p>High capacity long range support.</p>
+                <button>Buy Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SPLIT SECTION 1 -->
+    <section class="split">
+        <div class="split-text">
+            <h2>AXON EV Smart Home Charging Solutions</h2>
+            <p>At AXON EV, we believe charging your vehicle should be as seamless and intelligent as driving it. Our
+                advanced home charging
+                systems are engineered to deliver fast, safe, and energy-efficient performance tailored for modern
+                electric lifestyles. Designed
+                with smart connectivity, real-time monitoring, and AI-powered optimization, AXON EV chargers give you
+                complete control over your power
+                usage through an intuitive mobile app. Whether you need a compact everyday charger or a high-capacity
+                fast-charging solution, our c
+                ertified installation ensures maximum safety, durability, and long-term reliability. With
+                weather-resistant builds, advanced protection
+                systems, and future-ready software upgrades, AXON EV home chargers are not just accessories — they are a
+                core part of your
+                electric journey. Power your vehicle overnight, reduce energy costs, and experience the confidence of
+                waking up to a fully charged
+                future every single day.</p>
+        </div>
+        <img src="1.png">
+    </section>
+
+    <!-- SPLIT SECTION 2  -->
+    <section class="split">
+        <img src="2.png">
+        <div class="split-text">
+            <h2>Redefining Home Charging with AXON EV</h2>
+            <p>Step into the future of electric mobility with AXON EV’s next-generation home charging solutions,
+                designed to deliver power
+                with intelligence and precision. Our chargers combine cutting-edge engineering with sleek, modern design
+                to complement both
+                your vehicle and your lifestyle. With high-speed charging capabilities, advanced safety protocols, and
+                smart energy management
+                features, AXON EV ensures that every charging session is efficient, secure, and effortless. Monitor
+                performance in real time,
+                schedule charging during off-peak hours, and optimize energy consumption directly from your smartphone.
+                Built for durability
+                and certified for reliability, our chargers are crafted to perform flawlessly in every environment —
+                from indoor garages to
+                outdoor installations. At AXON EV, we don’t just provide power; we create a smarter, cleaner, and more
+                connected charging
+                experience for the road ahead.</p>
+        </div>
+    </section>
+<hr>
+    <!-- FOOTER -->
+  <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h2 style="color:var(--axon-blue); margin-bottom: 20px;">AXON EV</h2>
+                <p>This is a simulated learning platform created for educational purposes. All images generated via Gemini AI to showcase future mobility concepts.</p>
+            </div>
+            <div>
+                <h4>Learning</h4>
+                <ul>
+                    <li><a href="#">EV Basics</a></li>
+                    <li><a href="#">Charging Guide</a></li>
+                    <li><a href="#">Battery Tech</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Project</a></li>
+                    <li><a href="#">Roadmap</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 15px;">Get the latest in EV tech.</p>
+                <input type="email" placeholder="Email Address" style="padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; width: 100%;">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Axon EV Project | For Learning Purposes</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

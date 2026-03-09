@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="compare.css">
+  <title>Axon EV</title>
+</head>
+
+<body>
+
+  <!-- CHECKBOX (MUST BE FIRST) -->
+  <input type="checkbox" id="menu-toggle">
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="header">
+    <nav class="nav-container">
+
+      <div class="logo">
+        <div class="logo-box">A</div>
+        <span class="logo-text">AXON EV</span>
+      </div>
+
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#vehicle-style-section">Rent Vehicles</a></li>
+        <li><a href="#best-deals">Deals</a></li>
+      </ul>
+
+      <!-- Button -->
+      <label for="menu-toggle" class="menu-btn">☰</label>
+
+    </nav>
+  </header>
+
+  <!-- ===== SIDEBAR ===== -->
+  <div class="sidebar">
+
+    <!-- Close Button -->
+    <label for="menu-toggle" class="close-btn">✕</label>
+
+    <h3>Menu</h3>
+
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../vehicals page/vehicles.html">Vehicles Showroom</a></li>
+      <li><a href="../compare-page/compare.html" class="active">Compare Models</a></li>
+      <li><a href="../sub-page/sub.html">Subscription</a></li>
+      <li><a href="../Home Charger/home.html">Add Home Charger</a></li>
+      <li><a href="../calculet-page/cal.html">Calculate Total Cost</a></li>
+      <li><a href="../help-page/help.html">Help Center</a></li>
+    </ul>
+  </div>
+  <!-- Overlay  -->
+  <label for="menu-toggle" class="overlay"></label>
+
+  <!-- ===== HERO IMAGE SECTION ===== -->
+  <section class="hero">
+    <img src="img/main.png" alt="Vehicles Showroom">
+  </section>
+
+
+
+  <!-- Compare Mode Selection Section -->
+  <section class="compare-mode-section">
+    <div class="container">
+      <div class="compare-controls">
+        <div class="dropdown">
+          <button class="btn-primary" id="compare-mode-btn">Select Compare Mode</button>
+          <div class="dropdown-menu" id="compare-dropdown">
+            <a href="#" class="dropdown-item" data-count="2">Compare 2 Cars</a>
+            <a href="#" class="dropdown-item" data-count="3">Compare 3 Cars</a>
+            <a href="#" class="dropdown-item" data-count="4">Compare 4 Cars</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="selection-cards-grid" id="selection-cards-container">
+        <!-- Dynamically generated cards will go here -->
+      </div>
+
+      <div class="compare-action">
+        <button class="btn-compare" id="compare-now-btn" disabled>Compare Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Result Section -->
+  <section class="comparison-result-section" id="comparison-result-section">
+    <div class="container">
+      <h2 class="section-title">Vehicle Comparison</h2>
+      <div class="comparison-table-wrapper" id="comparison-table-container">
+        <!-- Side-by-side comparison table will be generated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- EV Selection Modal -->
+  <div class="modal" id="ev-selection-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h2>Choose Your EV</h2>
+      <div class="modal-search-container">
+        <input type="text" id="modal-search" class="modal-search-input" placeholder="Search by name or brand...">
+      </div>
+      <div class="ev-options-grid" id="ev-options-container">
+        <!-- EV models will be listed here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- most femoua -->
+<section class="most-compared-section">
+    <div class="container">
+      <h2 class="section-title">Most Compared Cars...</h2>
+      <div class="most-compared-grid">
+        <div class="m-comp-card">
+          <div class="m-comp-images">
+            <img src="https://images.ctfassets.net/3xid768u5joa/3IHu2QtKiCms6sYAGXd1St/f90a96f6a770a63cd27d0a6062c16e9f/01._Pearl_White_multi-coat.jpg" alt="EV 1">
+            <div class="vs-badge">VS</div>
+            <img src="https://mhcmobility.at/wp-content/uploads/2023/11/2023-BMW-i4-white-full_color-driver_side_front_quarter.png" alt="EV 2">
+          </div>
+          <div class="m-comp-info">
+            <h4>Tesla Model 3 vs BMW i4</h4>
+            <p>The premium sedan battle</p>
+            <button class="btn-outline">View Details</button>
+          </div>
+        </div>
+        <div class="m-comp-card">
+          <div class="m-comp-images">
+            <img src="https://imgd-ct.aeplcdn.com/1056x660/n/s1tc73a_1579615.jpg?q=75vv" alt="EV 3">
+            <div class="vs-badge">VS</div>
+            <img src="https://tse2.mm.bing.net/th/id/OIP.lZD7SA5YUoXoGrMuXUEWhAHaEh?rs=1&pid=ImgDetMain&o=7&rm=3" alt="EV 4">
+          </div>
+          <div class="m-comp-info">
+            <h4>Nexon EV vs MG ZS EV</h4>
+            <p>Most popular SUV comparison</p>
+            <button class="btn-outline">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="expert-video-section">
+  <div class="container">
+    <h2 class="section-title">Car Comparisons From Our Experts...</h2>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/_83a19FoShE?si=OK_I7p9wchAwMRLq" title="YouTube video player" frameborder="0"  title="Expert Review" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+       <iframe src="https://www.youtube.com/embed/O70mtxpQGAI?si=n3Ze_NAi8lBTEJXb" title="YouTube video player" title="Expert Review" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ZbT1nDePQ7M?si=5e_g9OrSa364HnxZ" title="YouTube video player" title="Expert Review" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     
+    </div>
+  </div>
+</section>
+
+  <section class="image-box-section">
+    <div class="container">
+      <div class="img-box-container">
+        <img src="img\adds.png" alt="Special Feature">
+        <div class="img-box-overlay">
+          <h3>Explore Future Mobility</h3>
+          <p>Join the EV revolution with Axon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+
+  <section class="image-section">
+    <img src="../models/img/vehiclepagefooter.png" alt="Axon EV">
+
+    <!-- Modern Footer on Image -->
+    <footer class="image-footer">
+      <div class="footer-top">
+        <div class="footer-col">
+          <h3>About Axon EV</h3>
+          <p>Leading the way in electric mobility with sustainable, high-performance vehicles.</p>
+          <br><br>
+
+          <div class="footer-bottom">
+            <p>&copy; 2026 Axon EV. All rights reserved.</p>
+            <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+          </div>
+
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Dealers</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:support@axon.com">support@axon.com</a></p>
+          <p>Phone: +91 12345 67890</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  </section>
+
+  <script src="compare.js"></script>
+</body>
+
+</html>
