@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Coupes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axon EV - Rent Coupes</title>
+</head>
+<body>
+
+<div class="navbar" id="navbar">
+  <div class="logo">Axon EV</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#car-listings">Coupes for Rent</a>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search Coupes...">
+  </div>
+</div>
+
+<section class="hero-section">
+  <img src="img/main.png" alt="Premium EV Coupes">
+</section>
+
+<section id="filter">
+  <div class="filter-section">
+    <div class="filter-container">
+      <h1>Filter Coupes</h1>
+      <div class="filter-option">
+        <label for="priceRange">Price Range: ₹<span id="priceValue">000</span> - ₹5000000</label>
+        <input type="range" id="priceRange" min="500" max="5000000">
+      </div>
+      <div class="filter-option">
+        <label for="makerFilter">Maker / Brand:</label>
+        <select id="makerFilter">
+          <option value="all">All</option>
+          <option>Tesla</option>
+          <option>Porsche</option>
+          <option>Audi</option>
+          <option>BMW</option>
+          <option>Mercedes-Benz</option>
+        </select>
+      </div>
+      <div class="filter-option">
+        <label for="transmission">Transmission:</label>
+        <select id="transmission">
+          <option value="all">All</option>
+          <option value="automatic">Automatic</option>
+          <option value="manual">Manual</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-image">
+      <img src="img/filterimg.png" alt="Coupe Image">
+    </div>
+  </div>
+</section>
+
+<section id="car-listings">
+  <h1 style="text-align:center; margin-bottom:40px; color:#4b0082;">Available EV Coupes</h1>
+  <div class="listing-grid">
+
+  <!-- 1. Tesla Roadster -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2878,c_fit,f_auto,q_auto:best/roadster-hero-desktop" alt="Tesla Roadster"/>
+        <div class="badge">82% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Tesla Roadster</div>
+        <div class="car-meta">EV • Automatic • 500 km</div>
+        <div class="car-meta">Range: 1000 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹80,000/day</div>
+        <div class="price">₹14,500/day</div>
+        <div class="price-tag great">You Save: ₹65,500</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/01coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Porsche Taycan -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://media.gettyimages.com/id/1384668232/photo/porsche-taycan-on-a-public-parking.jpg?s=612x612&w=0&k=20&c=AI-vL724_FqRnXG7l85Hck5gL5msARmcoDytJPCXk2Y=" alt="Porsche Taycan"/>
+        <div class="badge">80% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">Porsche Taycan</div>
+        <div class="car-meta">EV • Automatic • 3,000 km</div>
+        <div class="car-meta">Range: 480 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹70,000/day</div>
+        <div class="price">₹14,000/day</div>
+        <div class="price-tag great">You Save: ₹56,000</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/02coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Audi e-tron GT -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://media.gettyimages.com/id/2193857577/photo/brussels-belgium-audi-rs-e-tron-gt-performance-battery-electric-performance-car-on-display-at.jpg?s=612x612&w=0&k=20&c=_Fje156-w9O3YyrvJc4EQ4H7hL5DtFdkt0e4GC4p1kM=" alt="Audi e-tron GT"/>
+        <div class="badge">79% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Audi e-tron GT</div>
+        <div class="car-meta">EV • Automatic • 1,500 km</div>
+        <div class="car-meta">Range: 488 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹65,000/day</div>
+        <div class="price">₹13,800/day</div>
+        <div class="price-tag great">You Save: ₹51,200</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/03coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Mercedes EQC Coupe -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Mercedes-Benz/EQS/8423/1750080410879/exterior-image-164.jpg" alt="Mercedes EQC Coupe"/>
+        <div class="badge">81% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Mercedes EQC</div>
+        <div class="car-meta">EV • Automatic • 1,800 km</div>
+        <div class="car-meta">Range: 450 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹75,000/day</div>
+        <div class="price">₹14,200/day</div>
+        <div class="price-tag great">You Save: ₹60,800</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/04coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Jaguar I-PACE -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://media.gettyimages.com/id/1031557256/photo/london-united-kingdom-prince-charles-prince-of-waless-new-jaguar-i-pace-fully-electric-car.jpg?s=612x612&w=0&k=20&c=JT8lwr_u47587fLn-C0ObflJHfoORrLsi7mTfb43MGw=" alt="Jaguar I-PACE"/>
+        <div class="badge">80% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Jaguar I-PACE</div>
+        <div class="car-meta">EV • Automatic • 2,000 km</div>
+        <div class="car-meta">Range: 470 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹68,000/day</div>
+        <div class="price">₹13,500/day</div>
+        <div class="price-tag great">You Save: ₹54,500</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/05coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. BMW i4 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://media.gettyimages.com/id/2016313188/photo/toronto-canada-bmw-i4-m50-is-seen-on-display-during-2024-canadian-international-autoshow-at.jpg?s=612x612&w=0&k=20&c=IOUlZc3SOoGpS4R6tJANT2kFQXQzZe9BkkgI6uhq_vI=" alt="BMW i4"/>
+        <div class="badge">81% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">BMW i4</div>
+        <div class="car-meta">EV • Automatic • 2,200 km</div>
+        <div class="car-meta">Range: 490 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹72,000/day</div>
+        <div class="price">₹14,000/day</div>
+        <div class="price-tag great">You Save: ₹58,000</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/06coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Lexus LC 500 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://media.gettyimages.com/id/642407262/photo/chicago-2018-lexus-lc-500h-is-on-display-at-the-109th-annual-chicago-auto-show-at-mccormick.jpg?s=612x612&w=0&k=20&c=mdIeuQWIw_BXgc4k1jcnUe-Sy7djEQlf83aZJlmeBjk=" alt="Lexus LC 500"/>
+        <div class="badge">81% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Lexus LC 500</div>
+        <div class="car-meta">EV • Automatic • 1,900 km</div>
+        <div class="car-meta">Range: 430 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹78,000/day</div>
+        <div class="price">₹14,800/day</div>
+        <div class="price-tag great">You Save: ₹63,200</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/07coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Maserati Alfieri -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://media.gettyimages.com/id/461492464/photo/detroit-mi-maserati-shows-off-their-alfieri-concept-car-during-the-media-preview-at-the-north.jpg?s=612x612&w=0&k=20&c=_t8XxDqP75THqG4cUC_xObuVjF3xxM4VTLkQesTlOCo=" alt="Maserati Alfieri"/>
+        <div class="badge">82% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">Maserati Alfieri</div>
+        <div class="car-meta">EV • Automatic • 2,100 km</div>
+        <div class="car-meta">Range: 450 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹85,000/day</div>
+        <div class="price">₹14,900/day</div>
+        <div class="price-tag great">You Save: ₹70,100</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/08coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. BMW i7 -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/i7/11281/1752478507696/front-view-118.jpg" alt="Fisker Ocean Coupe"/>
+        <div class="badge">78% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">BMW i7</div>
+        <div class="car-meta">EV • Automatic • 1,700 km</div>
+        <div class="car-meta">Range: 420 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹60,000/day</div>
+        <div class="price">₹12,900/day</div>
+        <div class="price-tag great">You Save: ₹47,100</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/09coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. BYD Seal -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/BYD/Seal/9561/1734775694899/front-view-118.jpg" alt="Rivian R1S Coupe"/>
+        <div class="badge">78% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">BYD Seal</div>
+        <div class="car-meta">EV • Automatic • 2,000 km</div>
+        <div class="car-meta">Range: 440 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹65,000/day</div>
+        <div class="price">₹14,500/day</div>
+        <div class="price-tag great">You Save: ₹50,500</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/10coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Bentley GT -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/models/27my/gt-s/week-4-crops/GT%20S%20Stage%20Main%20Updated.jpg/_jcr_content/renditions/original.image_file.1048.449.file/GT%20S%20Stage%20Main%20Updated.jpg" alt="Bentley Continental GT"/>
+        <div class="badge">84% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2023</div>
+        <div class="car-name">Bentley GT</div>
+        <div class="car-meta">EV • Automatic • 1,900 km</div>
+        <div class="car-meta">Range: 450 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹95,000/day</div>
+        <div class="price">₹14,800/day</div>
+        <div class="price-tag great">You Save: ₹80,200</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/11coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. Lamborghini Huracan EV -->
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://content.carlelo.com/media/models/457/interior/huracan-1.webp" alt="Lamborghini Huracan EV"/>
+        <div class="badge">88% OFF</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Huracan EV</div>
+        <div class="car-meta">EV • Automatic • 1,800 km</div>
+        <div class="car-meta">Range: 460 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹120,000/day</div>
+        <div class="price">₹14,900/day</div>
+        <div class="price-tag great">You Save: ₹105,100</div>
+        <button class="rent-btn" onclick="window.location.href='coupes/12coupe.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+<section class="page-content">
+  <h2>Our EV Coupe Fleet</h2>
+  <p>Explore a premium selection of electric coupes for a stylish and high-performance ride. Reserve your favorite coupe today for a seamless rental experience.</p>
+  <p>All vehicles are equipped with the latest safety features and electric efficiency for a smooth journey.</p>
+</section>
+
+<footer class="ev-footer-section">
+  <img src="img/footer.png" alt="Axon EV">
+  <div class="ev-footer-overlay">
+    <div class="ev-footer-top">
+      <div class="ev-footer-col">
+        <h3>About Axon EV</h3>
+        <p>Leading the way in electric mobility with sustainable, high-performance vehicles.</p>
+      </div>
+      <div class="ev-footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Models</a></li>
+          <li><a href="#">Dealers</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div class="ev-footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: support@axon.com</p>
+        <p>Phone: +91 12345 67890</p>
+      </div>
+      <div class="ev-footer-col">
+        <h3>Follow Us</h3>
+        <div class="ev-social-links">
+          <a href="#">Facebook</a> | <a href="#">Twitter</a>
+        </div>
+      </div>
+    </div>
+    <div class="ev-footer-bottom">
+      <p>&copy; 2026 Axon EV. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="Coupes.js"></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="convertible.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axon EV - Rent Convertibles</title>
+</head>
+<body>
+
+<div class="navbar" id="navbar">
+  <div class="logo">Axon EV</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#car-listings">Convertibles for Rent</a>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search Convertibles...">
+  </div>
+</div>
+
+<section class="hero-section">
+  <img src="img/main.png" alt="Premium EV Convertibles">
+</section>
+
+<section id="filter">
+  <div class="filter-section">
+    <div class="filter-container">
+      <h1>Filter Convertibles</h1>
+      <div class="filter-option">
+        <label for="priceRange">Price Range: ₹<span id="priceValue">000</span> - ₹5000000</label>
+        <input type="range" id="priceRange" min="500" max="5000000">
+      </div>
+      <div class="filter-option">
+        <label for="makerFilter">Maker / Brand:</label>
+        <select id="makerFilter">
+          <option value="all">All</option>
+          <option>MG</option>
+          <option>Tesla</option>
+          <option>Maserati</option>
+          <option>Mini</option>
+          <option>Polestar</option>
+          <option>Fiat</option>
+        </select>
+      </div>
+      <div class="filter-option">
+        <label for="transmission">Transmission:</label>
+        <select id="transmission">
+          <option value="all">All</option>
+          <option value="automatic">Automatic</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-image">
+      <img src="img/filterimg.png" alt="Convertible Selection">
+    </div>
+  </div>
+</section>
+
+<section id="car-listings">
+  <h1 style="text-align:center; margin-bottom:40px; color:#4b0082;">Available EV Convertibles</h1>
+  <div class="listing-grid">
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://cdn.locator.digital/BPs/14285/Microsites/156/HubModelDiscoveryPage1/MG%20Cyberster/Cyberster%20Exterior_718x540px_5.webp" alt="MG Cyberster"/>
+        <div class="badge">SCISSOR DOORS</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">New / 2025</div>
+        <div class="car-name">MG Cyberster</div>
+        <div class="car-meta">EV • Automatic • 400 km</div>
+        <div class="car-meta">Range: 580 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹60,000/day</div>
+        <div class="price">₹12,500/day</div>
+        <div class="price-tag great">Save ₹47,500</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/01conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://maserati.scene7.com/is/image/maserati/maserati/worldwide/models/grancabrio/model-pages/gracabrio-trim-dark-green-front-left-view-desktop.jpg?$1800x2000$&fit=constrain" alt="Maserati Folgore"/>
+        <div class="badge">LUXURY</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2025</div>
+        <div class="car-name">Maserati Folgore</div>
+        <div class="car-meta">EV • Automatic • 1,200 km</div>
+        <div class="car-meta">Range: 450 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹1,15,000/day</div>
+        <div class="price">₹18,200/day</div>
+        <div class="price-tag great">Save ₹96,800</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/02conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2878,c_fit,f_auto,q_auto:best/roadster-glass-desktop" alt="Tesla Roadster"/>
+        <div class="badge">FASTEST</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2026</div>
+        <div class="car-name">Tesla Roadster</div>
+        <div class="car-meta">EV • Automatic • 200 km</div>
+        <div class="car-meta">Range: 1000 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹1,40,000/day</div>
+        <div class="price">₹24,500/day</div>
+        <div class="price-tag great">Save ₹1,15,500</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/03conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://www.mini.in/content/dam/MINI/marketIN/mini_in/Home/main-final-banner.webp.asset.1769683664724.webp" alt="Mini Cooper SE"/>
+        <div class="badge">COMPACT</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Mini SE Cabrio</div>
+        <div class="car-meta">EV • Automatic • 3,000 km</div>
+        <div class="car-meta">Range: 201 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹40,000/day</div>
+        <div class="price">₹8,500/day</div>
+        <div class="price-tag great">Save ₹31,500</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/04conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://www.polestar.com/dato-assets/11286/1746779512-03-polestar-6-25-roadster-performance-d.png?q=35&dpr=2&w=910" alt="Polestar 6"/>
+        <div class="badge">FLAGSHIP</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Concept / 2026</div>
+        <div class="car-name">Polestar 6</div>
+        <div class="car-meta">EV • Automatic • 100 km</div>
+        <div class="car-meta">Range: 600 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹95,000/day</div>
+        <div class="price">₹19,000/day</div>
+        <div class="price-tag great">Save ₹76,000</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/05conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://media.istockphoto.com/id/492426812/photo/fiat-500-2014.jpg?s=612x612&w=0&k=20&c=Rt5XIvj3aQwR7tRWp4b8e4CyoubUpxful2vAEXA3sfM=" alt="Fiat 500e"/>
+        <div class="badge">ECONOMY</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2024</div>
+        <div class="car-name">Fiat 500e Cabrio</div>
+        <div class="car-meta">EV • Automatic • 4,500 km</div>
+        <div class="car-meta">Range: 320 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹30,000/day</div>
+        <div class="price">₹6,200/day</div>
+        <div class="price-tag great">Save ₹23,800</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/06conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://www.abarth.com/content/dam/abarth/gamma/500e-range/gallery-1/1/New_Abarth_500e_Range-Gallery_1-card-01-Desktop-1534X774.jpg" alt="Abarth 500e"/>
+        <div class="badge">SPORTY</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">New / 2024</div>
+        <div class="car-name">Abarth 500e</div>
+        <div class="car-meta">EV • Automatic • 800 km</div>
+        <div class="car-meta">Range: 265 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹45,000/day</div>
+        <div class="price">₹9,400/day</div>
+        <div class="price-tag great">Save ₹35,600</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/07conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/porsche-e-boxster-6410b7f34f961.jpg?crop=0.805xw:0.787xh;0.152xw,0.213xh&resize=980:*" alt="Porsche EV"/>
+        <div class="badge">PRE-ORDER</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Excellent / 2025</div>
+        <div class="car-name">Porsche 718 EV</div>
+        <div class="car-meta">EV • Automatic • 100 km</div>
+        <div class="car-meta">Range: 480 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹1,30,000/day</div>
+        <div class="price">₹21,000/day</div>
+        <div class="price-tag great">Save ₹1,09,000</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/08conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://autodesignmagazine.com/wp-content/uploads/2023/08/fisker-ronin.jpg" alt="Fisker Ronin"/>
+        <div class="badge">4-DOOR CABRIO</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Limited / 2026</div>
+        <div class="car-name">Fisker Ronin</div>
+        <div class="car-meta">EV • Automatic • 50 km</div>
+        <div class="car-meta">Range: 960 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹1,50,000/day</div>
+        <div class="price">₹26,900/day</div>
+        <div class="price-tag great">Save ₹1,23,100</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/09conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://dolubatarya.com/uploads/2022/09/wuling-miniev-cabrio-range-cltc.jpg" alt="Wuling Cabrio"/>
+        <div class="badge">CUTE</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Mint / 2024</div>
+        <div class="car-name">Wuling Mini EV</div>
+        <div class="car-meta">EV • Automatic • 5,000 km</div>
+        <div class="car-meta">Range: 280 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹15,000/day</div>
+        <div class="price">₹3,900/day</div>
+        <div class="price-tag great">Save ₹11,100</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/10conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/models/26my/26my-gtc-azure/Range%20Stage%20Main.jpg/_jcr_content/renditions/original.image_file.1920.823.file/Range%20Stage%20Main.jpg" alt="Bentley EV"/>
+        <div class="badge">ULTRA-LUX</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">New / 2026</div>
+        <div class="car-name">Bentley EV GT</div>
+        <div class="car-meta">EV • Automatic • 300 km</div>
+        <div class="car-meta">Range: 500 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹1,80,000/day</div>
+        <div class="price">₹32,500/day</div>
+        <div class="price-tag great">Save ₹1,47,500</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/11conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-card">
+    <div class="card-box">
+      <div class="image-section">
+        <img src="https://imgd.aeplcdn.com/642x361/n/cw/ec/155577/left-front-three-quarter0.jpeg?isig=0&q=80" alt="Pininfarina B95"/>
+        <div class="badge">BARCHETTA</div>
+        <div class="heart">❤</div>
+      </div>
+      <div class="content">
+        <div class="condition">Exclusive / 2025</div>
+        <div class="car-name">Pininfarina B95</div>
+        <div class="car-meta">EV • Automatic • 150 km</div>
+        <div class="car-meta">Range: 450 km</div>
+        <div style="text-decoration:line-through;color:#888; font-size: 14px;">₹2,50,000/day</div>
+        <div class="price">₹45,000/day</div>
+        <div class="price-tag great">Save ₹2,05,000</div>
+        <button class="rent-btn" onclick="window.location.href='convertible/12conv.html'">Rent Now</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="page-content">
+  <h2>The Open-Top EV Experience</h2>
+  <p>Experience the future of grand touring. Our selection of electric convertibles offers silent, high-torque performance with the unmatched freedom of open-air driving.</p>
+</section>
+
+<footer class="ev-footer-section">
+  <img src="img/footer.png" alt="Axon EV">
+  
+  <!-- Modern Footer Overlay -->
+  <footer class="ev-footer-overlay">
+    <div class="ev-footer-top">
+
+      <div class="ev-footer-col">
+        <h3>About Axon EV</h3>
+        <p>Leading the way in electric mobility with sustainable, high-performance vehicles.</p>
+        <br><br>
+
+        <div class="ev-footer-bottom">
+          <p>&copy; 2026 Axon EV. All rights reserved.</p>
+          <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+      </div>
+
+      <div class="ev-footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Models</a></li>
+          <li><a href="#">Dealers</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="ev-footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:support@axon.com">support@axon.com</a></p>
+        <p>Phone: +91 12345 67890</p>
+      </div>
+
+      <div class="ev-footer-col">
+        <h3>Follow Us</h3>
+        <div class="ev-social-links">
+          <a href="#">Facebook</a> | 
+          <a href="#">Instagram</a> | 
+          <a href="#">Twitter</a> | 
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</section>
+
+<script src="convertible.js"></script>
+</body>
+</html>
