@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axon EV Login</title>
+    <style>
+        :root {
+            --primary-red: #ff3e3e;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Background Parallax Layer */
+        .bg-container {
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            background: url('https://i.pinimg.com/736x/eb/ba/ba/ebbaba49e0acdf2ef594c5c8b5721a5c.jpg') no-repeat center;
+            background-size: cover;
+            filter: brightness(0.4) blur(2px);
+            z-index: -1;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* The Login Card */
+        .login-card {
+            width: 380px;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 62, 62, 0.3);
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 30px rgba(255, 62, 62, 0.1);
+            z-index: 10;
+        }
+
+        /* Top Car Image */
+        .car-top {
+            width: 280px;
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+            transition: transform 0.2s ease-out;
+        }
+
+        h2 { color: white; margin-top: 40px; letter-spacing: 2px; }
+
+        .input-group { margin: 20px 0; }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            background: rgba(255,255,255,0.9);
+            margin-bottom: 15px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-reg { background: transparent; color: white; border: 1px solid white; }
+        .btn-engine { background: white; color: black; box-shadow: 0 0 15px rgba(255,255,255,0.4); }
+        .btn-engine:hover { background: var(--primary-red); color: white; }
+
+        /* Mirror Effect */
+        .mirror-floor {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 30vh;
+            background: linear-gradient(to top, rgba(10,10,10,1), transparent);
+            z-index: 5;
+        }
+
+        .reflection {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%) scaleY(-1);
+            opacity: 0.2;
+            filter: blur(4px);
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container" id="bg"></div>
+
+    <div class="login-card" id="card">
+        <img src="https://www.freepnglogos.com/uploads/bmw-png/white-bmw-car-png-image-pngpix-26.png" class="car-top" id="topCar" alt="Car">
+        
+        <h2>AXON EV</h2>
+        
+        <div class="input-group">
+            <input type="email" placeholder="Email Address">
+            <input type="password" placeholder="Password">
+        </div>
+
+                <div class="btn-row">
+                <button onclick="window.location.href='vehicals page/vehicles.html'" class="btn-engine">Login...</button>
+        </div>
+
+    </div>
+
+    <div class="mirror-floor"></div>
+    <img src="https://i.imgur.com/8m5xZfF.png" class="reflection" id="reflectCar">
+
+    <script>
+        const bg = document.getElementById('bg');
+        const card = document.getElementById('card');
+        const car = document.getElementById('topCar');
+
+        document.addEventListener('mousemove', (e) => {
+            let x = (window.innerWidth / 2 - e.pageX) / 30;
+            let y = (window.innerHeight / 2 - e.pageY) / 30;
+
+            // Move background
+            bg.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            
+            // Move card slightly
+            card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+            
+            // Move top car independently for depth
+            car.style.transform = `translateX(calc(-50% + ${-x * 1.5}px)) translateY(${-y * 1.5}px)`;
+        });
+    </script>
+</body>
+</html>
