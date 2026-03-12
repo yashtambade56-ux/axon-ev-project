@@ -344,14 +344,18 @@
     </footer>
 
     <script>
+        // Fixed vals
         const EV_COST_KM = 1.15; 
         const CO2_PER_KM = 0.12;
 
+        // sliders
         const sliders = {
             dist: document.getElementById('s-dist'),
             fuel: document.getElementById('s-fuel'),
             mile: document.getElementById('s-mile')
         };
+
+        // Get labels
         const displays = {
             dist: document.getElementById('v-dist'),
             fuel: document.getElementById('v-fuel'),
@@ -361,24 +365,29 @@
             co2: document.getElementById('r-co2')
         };
 
+        // Update results and read no.
         function update() {
             const d = parseFloat(sliders.dist.value);
             const f = parseFloat(sliders.fuel.value);
             const m = parseFloat(sliders.mile.value);
 
+            // Update text
             displays.dist.innerText = d.toLocaleString();
             displays.fuel.innerText = f;
             displays.mile.innerText = m;
 
+            // Calc
             const petrolMonthly = (d / m) * f;
             const evMonthly = d * EV_COST_KM;
             const savings = d === 0 ? 0 : petrolMonthly - evMonthly;
 
+            // Show totals
             displays.month.innerText = "₹" + Math.max(0, Math.round(savings)).toLocaleString();
             displays.year.innerText = "₹" + Math.max(0, Math.round(savings * 12)).toLocaleString();
             displays.co2.innerText = Math.round(d * 12 * CO2_PER_KM).toLocaleString();
         }
 
+        // slad moment
         Object.values(sliders).forEach(s => s.addEventListener('input', update));
         update();
     </script>
