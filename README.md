@@ -1,4 +1,4 @@
-# ⚡ Axon EV – Electric Vehicle Subscription Platform
+# ⚡ Axon EV – Electric Vehicle Subscription Platform.
 
 Axon EV is a modern web platform designed to showcase and compare electric vehicles while offering a subscription-based rental system. The project allows users to explore EV models, compare specifications, and calculate subscription costs based on different plans.
 
