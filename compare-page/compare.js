@@ -1,8 +1,3 @@
-/**
- * Axon EV - Comparison Module (Complete Fleet)
- * Handles all 84+ cars from the project with professional comparison of Price, Range, and Charging Time.
- */
-
 const evData = [
     // --- Axon EV Core Models ---
     { id: 'axon-lite', name: 'Axon EV Lite', price: '₹ 25,000', priceVal: 25000, range: '450 km', rangeVal: 450, charging: '30 min', chargingVal: 30, image: 'img/lite.png' },
@@ -305,3 +300,4 @@ function generateComparisonTable() {
     `;
     comparisonTable.innerHTML = html;
 }
+
